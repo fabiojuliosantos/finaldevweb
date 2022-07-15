@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+
+{% block 'conteudo'%}
+    <br>
+    <h2>Cursos e Palestras disponíveis: </h2>
+    <br>
+    <p>
+      
+    </p>
+    <div class="cursosContainer">
+      
+        {% for cursoslistados in cursoslistados %}
+     
+        <div class="row-md">
+        
+          <div class="card" style="width: 17rem;">
+            <div class="card-body bg-dark">
+              <h5 class="card-title">{{cursoslistados.nome_curso}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{cursoslistados.professor}}</h6>
+              <p class="card-text">{{cursoslistados.data_curso}}</p>
+              <p class="card-text">{{cursoslistados.categoria}}</p>
+              </a>
+            </div>
+          
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+      <br>
+      {% comment %} <a href="#" class="btn btn-success">Inscreva-se em um dos cursos</a> {% endcomment %}
+      <br>
+      
+        
+      
+     
+
+{% endblock 'conteudo'%}

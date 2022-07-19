@@ -27,5 +27,6 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
+        redis-server
         cd mysite/
         python manage.py test

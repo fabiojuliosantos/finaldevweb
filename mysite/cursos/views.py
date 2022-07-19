@@ -6,7 +6,7 @@ from django.views.decorators.cache import cache_page
 
 # Create your views here.
 
-@cache_page(60)
+@cache_page(40)
 def home(request):
 
     if request.session.get('usuario'):

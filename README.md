@@ -12,6 +12,7 @@ Atividades completadas:
 ## :pen: Tecnologias Utilizadas:
 - HTML;
 - CSS;
+- Bootstrap;
 - Django/Python;
 - Sqlite
 

@@ -12,26 +12,42 @@
         {% for cursoslistados in cursoslistados %}
      
         <div class="row-md">
-        
-          <div class="card" style="width: 16rem;">
+          <div class="card" style="width: 16rem; font-weight: bold">
             <div class="card-body bg-dark">
               <h5 class="card-title">{{cursoslistados.nome_curso}}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{cursoslistados.professor}}</h6>
+              <h6 class="card-text mb-2 ">{{cursoslistados.professor}}</h6>
               <p class="card-text">{{cursoslistados.data_curso}}</p>
-              <a href={%url 'login'%} button type="button" class="btn btn-outline-info">Clique para acessar</button>
-
-              </a>
             </div>
-          
           </div>
         </div>
         {% endfor %}
-        
       </div>
       <br>
       {% comment %} <a href="#" class="btn btn-success">Inscreva-se em um dos cursos</a> {% endcomment %}
       <br>
-      
+    <div class="cursosForm">
+      <div class="form-group">
+        
+        <form id="form_inscrever" action="{% url 'inscrever_curso' %}" method="POST">{% csrf_token %}
+          <select class="form-control" name="user">
+            {% for usuario in usuarios %}    
+              <option value='{{usuario.id}}'>{{usuario.nome}}</option>
+            {% endfor %}
+          </select>
+        <br>
+          <select class="form-control" name="curso">
+          {% for cursoslistados in cursoslistados %}    
+            <option value='{{cursoslistados.id}}'>{{cursoslistados.nome_curso}}</option>
+          {% endfor %}
+          </select>
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+          <input type="submit" value="Inscrever-se" class="btn btn-info btnMargin">
+        </form>
+    </div>
         
       
      

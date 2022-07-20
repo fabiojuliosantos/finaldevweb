@@ -25,7 +25,21 @@ body {
 
 .card {
     display: flex;
+    font-weight: bold;
     justify-content: space-between;
     width: 100%
 }
 
+.cursosForm {
+    width: 50%;
+    margin-left:17rem;
+    margin-right: 17rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.btnMargin {
+    margin-top: 3rem;
+}

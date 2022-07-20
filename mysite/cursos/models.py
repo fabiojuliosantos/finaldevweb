@@ -1,3 +1,4 @@
+from pickle import TRUE
 from django.db import models
 from usuarios.models import Usuario
 
@@ -14,3 +15,14 @@ class CursosDisponiveis(models.Model):
 
     class Meta:
         verbose_name = 'Curso'
+
+class CursosInscritos(models.Model):
+    choices = (
+        ('P', 'Péssimo'),
+        ('R', 'Ruim'),
+        ('B', 'Bom'),
+        ('O', 'Ótimo')
+    )
+    user = models.ForeignKey(Usuario, on_delete=models.DO_NOTHING, null=TRUE)
+    curso = models.ForeignKey(CursosDisponiveis, on_delete=models.DO_NOTHING, null=TRUE)
+    avaliacao = models.CharField(max_length=1, choices=choices, null=True, blank=True)

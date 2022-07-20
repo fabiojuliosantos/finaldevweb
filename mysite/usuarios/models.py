@@ -8,4 +8,4 @@ class Usuario(models.Model):
     senha = models.CharField(max_length=64, null=False)
 
     def __str__(self) -> str:
-        return self.nome
+        return self.nome 

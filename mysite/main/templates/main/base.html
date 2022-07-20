@@ -21,7 +21,7 @@
 
   <nav class="navbar navbar-light">
     <a class="navbar-brand" href="{%url 'home' %}">Início</a>
-    <a class="navbar-brand" href="{%url 'listagem'%}">Cursos e Palestras</a>
+    <a class="navbar-brand" href="{%url 'listagem'%}">Cursos</a>
     <a class="navbar-brand" href="{%url 'login'%}">Login/Registrar</a>
     {%  if usuario_logado %}
       <a href="{% url 'sair'%}" class="btn btn-danger">Sair</a>

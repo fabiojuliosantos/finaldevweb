@@ -1,3 +1,4 @@
+from curses.ascii import HT
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .models import CursosDisponiveis, CursosInscritos
@@ -28,5 +29,26 @@ def home(request):
 def logar(request):
     return render(request, 'cursos_logar.html')
 
+def mostrar_inscricoes(request):
+    usuario = Usuario.objects.get(id = request.session['usuario'])
+    inscricoes = CursosInscritos.objects.filter(user = usuario)
+    print(inscricoes)
+
 def inscrever_curso(request):
-    return HttpResponse('teste')
+    if request.method == 'POST':
+        user = request.POST.get('user')
+        curso = request.POST.get('curso')
+    
+    cursosinscritos = CursosInscritos(user_id = user, 
+                                      curso_id = curso)
+    cursosinscritos.save()
+
+    return redirect('listagem/')
+
+def inscricoes(request):
+    usuario = Usuario.objects.get(id = request.session['usuario'])
+    cursos_inscritos = CursosInscritos.objects.filter(user = usuario)
+    print(cursos_inscritos)
+
+    return render(request, 'mostra_cursos.html', {'usuario_logado': request.session['usuario'], 
+                                                'cursos_inscritos':cursos_inscritos})

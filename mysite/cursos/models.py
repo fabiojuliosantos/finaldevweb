@@ -3,6 +3,7 @@ from django.db import models
 from usuarios.models import Usuario
 
 
+
 class CursosDisponiveis(models.Model):
     nome_curso = models.CharField(max_length=150)
     professor = models.CharField(max_length=50)
@@ -26,3 +27,7 @@ class CursosInscritos(models.Model):
     user = models.ForeignKey(Usuario, on_delete=models.DO_NOTHING, null=TRUE)
     curso = models.ForeignKey(CursosDisponiveis, on_delete=models.DO_NOTHING, null=TRUE)
     avaliacao = models.CharField(max_length=1, choices=choices, null=True, blank=True)
+
+    def __str__(self) -> str:
+        return f"{self.user} | {self.curso} "
+    

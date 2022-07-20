@@ -1,7 +1,20 @@
 {% extends 'main/base.html' %}
 
 {% block 'conteudo'%}
+<h1>Cursos nos quais você está inscrito:</h1>
+<div class = "cursosContainer">
+    {%for cursos_inscritos in cursos_inscritos%}
 
-{{cursoslistados.nome_curso}}
-
+    <div class="row-md">
+        <div class="card" style="width: 16rem; font-weight: bold">
+        <div class="card-body bg-dark">
+            <h5 class="card-title">{{cursos_inscritos.user}}</h5>
+            <h6 class="card-text mb-2 ">{{cursos_inscritos.curso}}</h6>
+            <p class="card-text">{{cursos_inscritos.avaliacao}}</p>
+        </div>
+        </div>
+    </div>
+    <br>
+    {%  endfor  %}
+</div>    
 {% endblock 'conteudo'%}

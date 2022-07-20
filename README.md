@@ -21,3 +21,4 @@ Atividades completadas:
 - `Funcionalidade 1`: Permite Cadastro e Login do usuário;
 - `Funcionalidade 2`: Usuário só pode acessar os cursos disponíveis enquanto logado;
 - `Funcionalidade 3`: Cursos só são cadastrados via administrador Django:Admin;
+- `Funcionalidade 4`: Inscrição do Usuário em cursos de sua escolha;

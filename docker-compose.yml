@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis
+    command: redis-server --requirepass redis26 --appendonly yes
+    hostname: redis
+    ports:
+    - "6379:6379"
+  
+  mysite:
+    build:
+      context: mysite
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:  
+      - REDIS_HOST=redis
+    volumes:
+      - ./mysite:/mysite
+    command: >
+      sh -c "python3 manage.py migrate &&
+             python3 manage.py runserver 0.0.0.0:8000"
+  
+   

@@ -6,8 +6,8 @@ body {
 }
 
 .background {
-    background-color: #121212;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 .bg-hr {
@@ -30,17 +30,12 @@ body {
     width: 100%
 }
 
-.cursosForm {
-    width: 50%;
-    margin-left:17rem;
-    margin-right: 17rem;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-
+.cursosForm{
+    margin-left: 30rem;
+    margin-right: 30rem;
+    justify-items: center;
 }
 
-.btnsub {
-    margin-top: 3rem;
-    margin-right: 3rem
+.form_inscrever {
+    display: flex
 }

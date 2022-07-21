@@ -1,7 +1,7 @@
 from turtle import home
 from django.urls import URLPattern, path
-from .views import HomePage
+from . import views
 
 urlpatterns = [
-    path('mysite/main', HomePage.as_view(), name='home')
+    path('inicio/', views.inicial, name="inicio")
 ]

@@ -27,7 +27,7 @@ class CursosInscritos(models.Model):
     user = models.ForeignKey(Usuario, on_delete=models.DO_NOTHING, null=TRUE)
     curso = models.ForeignKey(CursosDisponiveis, on_delete=models.DO_NOTHING, null=TRUE)
     avaliacao = models.CharField(max_length=1, choices=choices, null=True, blank=True)
-
+    comentario = models.TextField(max_length=35, null=TRUE, blank=TRUE )
     def __str__(self) -> str:
         return f"{self.user} | {self.curso} "
     

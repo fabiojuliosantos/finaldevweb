@@ -38,9 +38,12 @@ def inscrever_curso(request):
     if request.method == 'POST':
         user = request.POST.get('user')
         curso = request.POST.get('curso')
-    
-    cursosinscritos = CursosInscritos(user_id = user, 
-                                      curso_id = curso)
+        avaliacao = request.POST.get('opcoes')
+        comentario = request.POST.get('comentario')
+        cursosinscritos = CursosInscritos(user_id = user, 
+                                          curso_id = curso,
+                                          avaliacao = avaliacao,
+                                          comentario = comentario)
     cursosinscritos.save()
 
     return redirect('listagem/')

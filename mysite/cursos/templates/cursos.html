@@ -40,10 +40,20 @@
             <option value='{{cursoslistados.id}}'>{{cursoslistados.nome_curso}}</option>
           {% endfor %}
           </select>
+            <select class="form-control" name="opcoes">
+              <option value='P'>Péssimo</option>
+              <option value='R'>Ruim</option>
+              <option value='B'>Bom</option>
+              <option value='O'>Ótimo</option>
+            </select>
+          <textarea name="comentario" rows="2" cols="30">
+            Digite um breve comentário
+          </textarea>
           <br>
           <br>
           <br>
           <br>
+          
         </div>
           <input type="submit" value="Inscrever-se" class="btn btn-info btnMargin">
         </form>

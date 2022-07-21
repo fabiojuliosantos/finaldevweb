@@ -6,7 +6,7 @@ from usuarios.models import Usuario
 from django.views.decorators.cache import cache_page
 # Create your views here.
 
-#@cache_page(60)
+@cache_page(60)
 def home(request):
 
     if request.session.get('usuario'):
